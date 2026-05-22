@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOHAN RJ CLASSES - Ultimate Rajasthan GK Portal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary-color: #d35400; 
+            --secondary-color: #2c3e50; 
+            --accent-color: #2980b9; 
+            --success-color: #27ae60; 
+            --bg-light: #f4f6f9;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding-top: 75px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            padding: 10px 18px;
+            transition: 0.3s;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 45vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .gk-block {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            border-top: 6px solid var(--primary-color);
+        }
+
+        .gk-block h2 {
+            color: var(--secondary-color);
+            font-size: 30px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #edf2f7;
+        }
+
+        .subsection-title {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin: 35px 0 15px 0;
+            font-weight: 700;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0 30px 0;
+            font-size: 15px;
+        }
+
+        .data-table th {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: left;
+            border: 1px solid #34495e;
+        }
+
+        .data-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px 16px;
+            color: #4a5568;
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .gk-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .gk-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: #4a5568;
+        }
+
+        .gk-list li::before {
+            content: "🔶";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* 👑 NEW PERMANENT BUTTON STYLING (WITHOUT JAVASCRIPT) */
+        details {
+            background-color: #f8fafc;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            margin: 20px 0;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            background-color: #ffffff;
+            border-color: var(--success-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        summary {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::before {
+            content: "➕";
+            font-size: 14px;
+        }
+
+        details[open] summary::before {
+            content: "➖";
+        }
+
+        details[open] summary {
+            color: var(--success-color);
+            border-bottom: 2px dashed #cbd5e1;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .advanced-fact {
+            background-color: #e3f2fd;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .data-table { display: block; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">SOHAN <span>RJ CLASSES</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#geography">Geography</a></li>
+                <li><a href="#polity">Polity</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>राजस्थान सामान्य ज्ञान (Complete Topic-Wise Master Notes)</h1>
+        <p>Dhindhwal GK और Apni Padhai के पैटर्न पर आधारित सुपर-फास्ट और परमानेंट बटन पैनल।</p>
+    </section>
+
+    <div class="container">
+
+        <!-- ==================== HISTORY SECTION ==================== -->
+        <div class="gk-block" id="history">
+            <h2>📜 1. राजस्थान का इतिहास (Rajasthan History)</h2>
+            
+            <div class="subsection-title">A. प्रमुख प्राचीन सभ्यताएं (Ancient Civilizations)</div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>सभ्यता स्थल</th>
+                        <th>नदी / क्षेत्र</th>
+                        <th>उत्खननकर्ता / वर्ष</th>
+                        <th>विशिष्ट साक्ष्य एवं परीक्षा उपयोगी तथ्य</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>कालीबंगा</b></td>
+                        <td>घग्घर (हनुमानगढ़)</td>
+                        <td>अमलानंद घोष (1952)</td>
+                        <td>लकड़ी की नाली, भूकंप के प्राचीनतम साक्ष्य, 7 अग्नि वेदिकाएं।</td>
+                    </tr>
+                    <tr>
+                        <td><b>आहड़</b></td>
+                        <td>बेड़च (उदयपुर)</td>
+                        <td>ए.के. व्यास (1953)</td>
+                        <td>उपनाम 'धूलकोट'। तांबा गलाने की भट्टियां, अनाज रखने के कोठे।</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 🔥 PERMANENT JAVASCRIPT-FREE BUTTON 1 -->
+            <details>
+                <summary>Dhindhwal GK Special: अन्य सभ्यताएं और एडवांस फैक्ट्स देखने के लिए यहाँ क्लिक करें</summary>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>सभ्यता स्थल</th>
+                            <th>नदी / क्षेत्र</th>
+                            <th>उत्खननकर्ता / वर्ष</th>
+                            <th>विशिष्ट साक्ष्य एवं परीक्षा उपयोगी तथ्य</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>बैराठ</b></td>
+                            <td>बाणगंगा (कोटपूतली)</td>
+                            <td>दयाराम साहनी (1936)</td>
+                            <td>कैप्टन बर्ट द्वारा सम्राट अशोक का 'भाब्रू शिलालेख' खोजा गया। बौद्ध स्तूप।</td>
+                        </tr>
+                        <tr>
+                            <td><b>गणेश्वर</b></td>
+                            <td>कांतली (नीमकाथाना)</td>
+                            <td>रत्नचन्द्र अग्रवाल (1977)</td>
+                            <td>"ताम्रयुगीन संस्कृतियों की जननी"। मछली पकड़ने का कांटा मिला।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </details>
+
+            <div class="subsection-title">B. राजस्थान का एकीकरण (7 Stages of Integration)</div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>चरण</th>
+                        <th>संघ का नाम</th>
+                        <th>तिथि</th>
+                        <th>सम्मिलित रियासतें व ठिकाने</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><b>मत्स्य संघ</b></td>
+                        <td>18 मार्च 1948</td>
+                        <td>अलवर, भरतपुर, धौलपुर, करौली + नीमराणा</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><b>पूर्वी राजस्थान</b></td>
+                        <td>25 मार्च 1948</td>
+                        <td>कोटा, बूंदी, झालावाड़, टोंक, शाहपुरा, प्रतापगढ़</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- 🔥 PERMANENT JAVASCRIPT-FREE BUTTON 2 -->
+            <details>
+                <summary>Apni Padhai Pattern: एकीकरण के शेष 3 से 7 चरण देखने के लिए यहाँ क्लिक करें</summary>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>चरण</th>
+                            <th>संघ का नाम</th>
+                            <th>तिथि</th>
+                            <th>सम्मिलित रियासतें व ठिकाने</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3</td>
+                            <td><b>संयुक्त राजस्थान</b></td>
+                            <td>18 अप्रैल 1948</td>
+                            <td>पूर्वी राजस्थान संघ + उदयपुर</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><b>बृहत् राजस्थान</b></td>
+                            <td>30 मार्च 1949</td>
+                            <td>संयुक्त राजस्थान + जयपुर, जोधपुर, बीकानेर, जैसलमेर</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><b>संयुक्त बृहत् राजस्थान</b></td>
+                            <td>15 मई 1949</td>
+                            <td>बृहत् राजस्थान + मत्स्य संघ</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><b>राजस्थान संघ</b></td>
+                            <td>26 जनवरी 1950</td>
+                            <td>संयुक्त बृहत् राजस्थान + सिरोही</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><b>वर्तमान राजस्थान</b></td>
+                            <td>01 नवंबर 1956</td>
+                            <td>आबू-देलवाड़ा, अजमेर-मेरवाड़ा का पूर्ण विलय।</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="advanced-fact">
+                    <h4>🧠 विशेष रियासती सचिवालय फैक्ट:</h4>
+                    <p>रियासती विभाग का गठन 5 जुलाई 1947 को किया गया था। इसके अध्यक्ष सरदार वल्लभभाई पटेल और सचिव वी.पी. मेनन थे।</p>
+                </div>
+            </details>
+        </div>
+
+        <!-- ==================== GEOGRAPHY SECTION ==================== -->
+        <div class="gk-block" id="geography">
+            <h2>🌍 2. राजस्थान का भूगोल (Rajasthan Geography)</h2>
+            
+            <div class="subsection-title">A. राजस्थान के भौतिक प्रदेश</div>
+            <ul class="gk-list">
+                <li><b>पश्चिमी रेतीला मैदान (61.11% भाग):</b> राज्य की 40% जनसंख्या। यह टेथिस सागर का अवशेष है।</li>
+                <li><b>अरावली पर्वतीय प्रदेश (9% भाग):</b> विश्व की सबसे प्राचीन वलित अवशिष्ट पर्वतमाला। सर्वोच्च चोटी: गुरुशिखर (1722 मीटर)।</li>
+            </ul>
+
+            <!-- 🔥 PERMANENT JAVASCRIPT-FREE BUTTON 3 -->
+            <details>
+                <summary>भूगोल के अन्य भौतिक प्रदेश और नदियां देखने के लिए यहाँ क्लिक करें</summary>
+                
+                <ul class="gk-list">
+                    <li><b>पूर्वी मैदान (23.3% भाग):</b> नदियों द्वारा निर्मित उपजाऊ जलोढ़ मिट्टी का क्षेत्र।</li>
+                    <li><b>हाड़ौती का पठार (6.89% भाग):</b> ज्वालामुखी लावे से निर्मित मध्यम काली मिट्टी का क्षेत्र।</li>
+                </ul>
+                
+                <div class="subsection-title">नदियों का अपवाह तंत्र</div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>नदी</th>
+                            <th>उद्गम</th>
+                            <th>विशेष बांध / उपनाम</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>चम्बल</b></td>
+                            <td>जानापाव पहाड़ियां</td>
+                            <td>कामधेनु। इस पर गांधीसागर, राणाप्रताप सागर बांध हैं।</td>
+                        </tr>
+                        <tr>
+                            <td><b>बनास</b></td>
+                            <td>खमनोर की पहाड़ियां</td>
+                            <td>'वन की आशा'। पूर्णतः राजस्थान में बहने वाली सबसे लंबी नदी (512 किमी)।</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </details>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SOHAN RJ CLASSES. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
